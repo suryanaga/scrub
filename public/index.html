@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>scrub</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="file">
+    <span class="dot" id="statusDot"></span>
+    <span class="name" id="fileName">…</span>
+    <span class="status" id="status">loading</span>
+  </div>
+  <div class="find">
+    <input id="search" type="search" placeholder="Find…" spellcheck="false" autocomplete="off">
+    <span class="count" id="searchCount"></span>
+  </div>
+</header>
+
+<div class="conflict" id="conflict" hidden>
+  <span>This file changed on disk since it was opened.</span>
+  <button id="conflictReload">Reload from disk</button>
+  <button id="conflictForce" class="ghost">Overwrite with my version</button>
+</div>
+
+<main id="doc" class="doc"></main>
+
+<footer class="player">
+  <button id="playBtn" class="play" title="Play / pause (space)" aria-label="Play">
+    <svg viewBox="0 0 24 24" class="i-play"><path d="M8 5.5v13l11-6.5z"/></svg>
+    <svg viewBox="0 0 24 24" class="i-pause"><path d="M7 5h3.2v14H7zm6.8 0H17v14h-3.2z"/></svg>
+  </button>
+  <button id="back5" class="skip" title="Back 5s (←)">−5</button>
+  <button id="fwd5" class="skip" title="Forward 5s (→)">+5</button>
+
+  <input type="range" id="seek" class="seek" min="0" max="1000" value="0" step="1" aria-label="Seek">
+  <span class="time" id="time">0:00 / 0:00</span>
+
+  <select id="rate" class="rate" title="Playback speed">
+    <option value="0.75">0.75×</option>
+    <option value="1" selected>1×</option>
+    <option value="1.25">1.25×</option>
+    <option value="1.5">1.5×</option>
+    <option value="1.75">1.75×</option>
+    <option value="2">2×</option>
+  </select>
+
+  <span class="hint">click to play from there · double-click to edit</span>
+</footer>
+
+<audio id="audio" src="/audio" preload="metadata"></audio>
+
+<script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "scrub",
+  "version": "0.1.0",
+  "description": "Local transcript editor with audio scrubbing. Click to play, double-click to edit.",
+  "bin": { "scrub": "server.js" },
+  "scripts": { "start": "node server.js" },
+  "license": "MIT",
+  "private": true
+}
